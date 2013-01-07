@@ -72,6 +72,7 @@ nl:
         shared:
           ago: geleden
           sent: Verstuurt
+          sent_days_ago: "Verstuurt %{days} %{ago}"
         subscriptions:
           success: Aanmelding was succesvol.
           invalid_email: Email is ongeldig.
