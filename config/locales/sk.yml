@@ -1,0 +1,82 @@
+sk:
+  refinery:
+    plugins:
+      refinery-mailchimp:
+        title: E-mail kampane
+    mailchimp:
+        admin:
+          refinery_settings:
+            form:
+              help:
+                mailchimp_api_key: "Získajte váš API kľúč z Mailchimp nástenky v menu 'Account' a submenu 'API Keys & Info.'"
+                mailchimp_default_to_name: "Prednastavený názov adresáta, ktorý adresát uvidí (nie e-mail adresa). Môže byť zmenený pre každú kampaň."
+                mailchimp_default_from_name: "Prednastavený názov odosielateľa kampane (nie e-mail adresa). Môže byť zmenený pre každú kampaň."
+                mailchimp_default_from_email: "Prednastavený e-mail odosielateľa kampane. Môže byť zmenený pre každú kampaň."
+                mailchimp_admin_base_url:  URL adresa (relatívna) vašej admin oblasti v službe Mailchimp. Používa sa pre generovanie odkazov vo vašich kampaniach. Zmeňte ju iba ak viete čo robíte.
+          campaigns:
+            index:
+              create_new: Vytvoriť novú kampaň
+              reorder: Preusporiadať kampane
+              reorder_done: Uložiť usporiadanie kampaní
+              sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+              no_items_yet: Nie sú vytvorené žiadne kampane. Kliknite na "Vytvoriť novú kampaň" pre vytvorenie prvej kampane
+              set_api_key: Musíte nastaviť valídny Mailchimp API kľúč.
+              set_api_link: Kliknite sem pre upravenie vášho kľúča.
+            campaign:
+              view_live: Zobraziť túto kampaň<br/><em>(otvorí sa v novom okne)</em>
+              edit: Upraviť  túto kampaň
+              delete: Zmazať túto kampaň
+              delete_confirmation: "Ste si istý, že chcete zmazať '%{subject}'?"
+              mailchimp_error: "Nepodarilo sa uložiť do služby Mailchimp. Prosím uistite sa, že váš API kľúč je správny a že používate existujúcu e-mail adresu odosielateľa."
+              send_dialog: "0doslať, naplánovať alebo testovať zaslanie tejto kampane"
+              send_test_success: Testovací e-mail bol úspešne zaslaný na adresu %{email}.
+              send_test_failure: Testovací e-mail sa nepodarilo zaslať na adesu %{email}. Prosím skontrolujte e-mail adresu.
+              send_now_success: Kampaň bola úspešne odoslaná!
+              send_now_failure: Kampaň sa nepodarilo odoslať. Prosím prihláste sa do služby Mailchimp aby ste sa uistili, že všetko je v poriadku.
+              schedule_success: Kampaň bola úspešne naplánovaná.
+              schedule_failure: Kampaň sa nepodarilo naplánovať. Prosím prihláste sa do služby Mailchimp aby ste sa uistili, že všetko je v poriadku.
+              unschedule_success: Naplánovanie kampane bolo úspešne zrušené.
+              unschedule_failure: Naplánovanie kampane sa nepodarilo zrušiť. Prosím prihláste sa do služby Mailchimp aby ste sa uistili, že všetko je v poriadku.
+            form:
+              subject: Predmet
+              body: Telo správy
+              to_and_from: Adresát a príjemca
+              settings: Nastavenia
+              subject_help: Názov predmetu, ktorý bude použitý v e-mailoch kampane.
+              mailchimp_list_id: Zoznam adresátov
+              mailchimp_list_id_help: Zoznam adresátov, ktorým sa zašle táto kampaň. Dajú sa spravovať v službe Mailchimp.
+              mailchimp_template_id: Šablóna
+              mailchimp_template_id_help: HTML šablóna, ktorá sa použije pre túto kampaň. Dá sa spravovať v službe Mailchimp.
+              to_name: Názov adresáta
+              to_name_help: "Názov adresáta (nie e-mail adresa), ktorý uvidí adresát. Predvolenú hodnotu môžete nastaviť v nastaveniach."
+              from_name: Názov odosielateľa
+              from_name_help: "Odosielateľ (nie e-mail adresa) textu vašej kampane. Predvolenú hodnotu môžete nastaviť v nastaveniach."
+              from_email: E-mail odosielateľa
+              from_email_help: "E-mail odosielateľa kampane. Predvolenú hodnotu môžete nastaviť v nastaveniach."
+              auto_tweet: Auto tweet
+              auto_tweet_help:  Automaticky zašle správu na Twitter, keď bude kampaň odoslaná. Vyžaduje nastaviť Twitter v administrácii služby Mailchimp
+            send_options:
+              campaign_scheduled_title: Naplánovaná
+              campaign_scheduled_explanation: Táto kampaň je naplánovaná na odoslanie
+              schedule_campaign: Naplánovať kampaň
+              schedule_campaign_title: Naplánovať kampaň neskôr
+              schedule_campaign_explanation: Naplánuje automatické odoslanie kampane v neskoršom dátume
+              send_campaign_title: Odoslať kampaň teraz
+              send_campaign_explanation: Odošle kampaň
+              send_test: Odoslať test
+              send_test_email_title: Odoslať testovací e-mail
+              send_test_email_explanation: Pošle testovací e-mail na adresu zadanú nižšie.
+              submit_now: Odoslať teraz
+              submit_confirm:  Chcete vykonať rozoslanie e-mailom všetkých prihláseným ľuďom na zozname. Ste si istý?
+              unschedule_campaign: Zrušiť naplánovanie kampane
+        shared:
+          ago: pred
+          sent: Odoslaná
+          sent_days_ago: "Odoslaná %{ago} %{days}"
+        subscriptions:
+          success: Prihlásenie k odberu bolo úspešné.
+          invalid_email: E-mail adresa je nesprávna.
+          unknown_error: Nastala chyba, skúste neskôr.
+        campaigns:
+          show:
+            other: Ďalšie kampane
