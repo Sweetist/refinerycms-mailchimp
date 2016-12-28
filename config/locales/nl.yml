@@ -61,6 +61,7 @@ nl:
               schedule_campaign: Plan campagne
               schedule_campaign_title: Plan campagne voor later
               schedule_campaign_explanation: Dit zal de campagne inplannen om automatisch verstuurt te worden.
+              send_at: Verstuur
               send_campaign_title: Verstuur campagne nu
               send_campaign_explanation: Dit verstuurt de campagne.
               send_test: Verstuur test

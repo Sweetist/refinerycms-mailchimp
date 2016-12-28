@@ -14,10 +14,6 @@ module Refinery
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.mailchimp_admin_campaigns_path }
           plugin.pathname = root
           plugin.menu_match = %r{refinery/mailchimp/campaigns(/.+?)?$}
-          plugin.activity = {
-            :class_name => :'refinery/mailchimp/campaign',
-            :title => 'subject'
-          }
         end
       end
 

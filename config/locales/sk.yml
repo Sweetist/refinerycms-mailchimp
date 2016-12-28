@@ -61,13 +61,14 @@ sk:
               schedule_campaign: Naplánovať kampaň
               schedule_campaign_title: Naplánovať kampaň neskôr
               schedule_campaign_explanation: Naplánuje automatické odoslanie kampane v neskoršom dátume
+              send_at: Odoslať dňa
               send_campaign_title: Odoslať kampaň teraz
               send_campaign_explanation: Odošle kampaň
               send_test: Odoslať test
               send_test_email_title: Odoslať testovací e-mail
               send_test_email_explanation: Pošle testovací e-mail na adresu zadanú nižšie.
               submit_now: Odoslať teraz
-              submit_confirm:  Chcete vykonať rozoslanie e-mailom všetkých prihláseným ľuďom na zozname. Ste si istý?
+              submit_confirm:  Chcete vykonať rozoslanie e-mailov všetkým prihláseným ľuďom na zozname?
               unschedule_campaign: Zrušiť naplánovanie kampane
         shared:
           ago: pred
