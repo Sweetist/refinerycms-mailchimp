@@ -11,9 +11,9 @@ Gem::Specification.new do |s|
   #s.files             = `git ls-files`.split("\n")
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
 
-  s.add_dependency  'refinerycms-core',     '~> 3.0.0'
+  s.add_dependency  'refinerycms',       ['>= 3.0.0', '< 5.0']
   s.add_dependency  'hominid',              '~> 3.0'
-  s.add_dependency  'refinerycms-settings', '~> 3.0.0'
+  s.add_dependency  'refinerycms-settings', ['>= 3.0.0', '< 5.0']
 
-  s.add_development_dependency 'refinerycms-testing', '~> 3.0.0'
+  s.add_development_dependency 'refinerycms-testing', ['>= 3.0.0', '< 5.0']
 end
