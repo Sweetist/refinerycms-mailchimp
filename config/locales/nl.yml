@@ -61,6 +61,7 @@ nl:
               schedule_campaign: Plan campagne
               schedule_campaign_title: Plan campagne voor later
               schedule_campaign_explanation: Dit zal de campagne inplannen om automatisch verstuurt te worden.
+              send_at: Verstuur
               send_campaign_title: Verstuur campagne nu
               send_campaign_explanation: Dit verstuurt de campagne.
               send_test: Verstuur test
@@ -72,6 +73,7 @@ nl:
         shared:
           ago: geleden
           sent: Verstuurt
+          sent_days_ago: "Verstuurt %{days} %{ago}"
         subscriptions:
           success: Aanmelding was succesvol.
           invalid_email: Email is ongeldig.

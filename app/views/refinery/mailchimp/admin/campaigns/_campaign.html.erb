@@ -3,12 +3,13 @@
     <%= campaign.subject %>
 
     <% if campaign.sent? %>
-      <span class="preview" title="<%= campaign.sent %>"><%= "#{t('sent', :scope => 'refinery.mailchimp.shared').downcase} #{distance_of_time_in_words_to_now(campaign.sent)} #{t('ago', :scope => 'refinery.mailchimp.shared')}." %></span>
+      <span class="preview" title="<%= campaign.sent %>"><%= "#{t('sent_days_ago', :scope => 'refinery.mailchimp.shared', :days=> distance_of_time_in_words_to_now(campaign.sent), :ago=> t('ago', :scope => 'refinery.mailchimp.shared') ).downcase}" %></span>
     <% elsif campaign.scheduled? %>
       <span class="preview" title="<%= campaign.scheduled_at %>">sending in <%= distance_of_time_in_words_to_now(campaign.scheduled_at) %></span>
     <% end %>
   </span>
   <span class='actions'>
+
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_mailchimp_admin_campaign_path(campaign),
          :subject => t('.edit') %>
     <%= link_to refinery_icon_tag("email_go.png"), refinery.send_options_mailchimp_admin_campaign_path(campaign, :dialog => true, :width => 725, :height => 525),

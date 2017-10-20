@@ -61,6 +61,7 @@ en:
               schedule_campaign: Schedule Campaign
               schedule_campaign_title: Schedule Campaign for Later
               schedule_campaign_explanation: This will schedule the campaign to be sent automatically at a future date.
+              send_at: Send at
               send_campaign_title: Send Campaign Now
               send_campaign_explanation: This will send the campaign.
               send_test: Send Test
@@ -72,6 +73,7 @@ en:
         shared:
           ago: ago
           sent: Sent
+          sent_days_ago: "Sent %{days} %{ago}"
         subscriptions:
           success: Subscription was succesful.
           invalid_email: Email address is invalid.

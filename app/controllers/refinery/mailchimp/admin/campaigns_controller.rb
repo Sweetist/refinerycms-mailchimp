@@ -2,7 +2,6 @@ module Refinery
   module Mailchimp
     module Admin
       class CampaignsController < ::Refinery::AdminController
-        respond_to :html
         crudify :'refinery/mailchimp/campaign', :title_attribute => 'subject', :xhr_paging => true, :sortable => false
 
         rescue_from Refinery::Mailchimp::API::BadAPIKeyError, :with => :need_api_key
@@ -16,15 +15,17 @@ module Refinery
           @campaign = ::Refinery::Mailchimp::Campaign.new :from_name => ::Refinery::Setting.get_or_set(Refinery::Mailchimp::API::DefaultFromNameSetting[:name], Refinery::Mailchimp::API::DefaultFromNameSetting[:default]),
                                                           :from_email => ::Refinery::Setting.get_or_set(Refinery::Mailchimp::API::DefaultFromEmailSetting[:name], Refinery::Mailchimp::API::DefaultFromEmailSetting[:default])
         end
-        
+
         def create
-          @campaign = Campaign.create(params[:campaign])
-          
-          if @campaign.save
-            flash[:notice] = t('refinery.crudify.created', :what => "'#{@campaign.subject}'")
-            respond_with(@campaign, :status => :created, :location => refinery.mailchimp_admin_campaigns_path) 
-          else
-            respond_with(@campaign, :status => :unprocessable_entity) 
+          @campaign = Campaign.create(campaign_params)
+
+          respond_to do |format|
+            if @campaign.save
+              flash[:notice] = t('refinery.crudify.created', :what => "'#{@campaign.subject}'")
+              format.html { redirect_to refinery.mailchimp_admin_campaigns_path, :status=>:created }
+            else
+              format.html { render :new}
+            end
           end
         end
 
@@ -71,6 +72,10 @@ module Refinery
         end
 
       protected
+        def campaign_params
+          params.require(:campaign).permit(:from_name, :from_email, :subject, :body, :mailchimp_list_id, :mailchimp_template_id, :auto_tweet)
+        end
+
         def sending_redirect_to(path)
           if from_dialog?
             render :text => "<script>parent.window.location = '#{path}';</script>"
